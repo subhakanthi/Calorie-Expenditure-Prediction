@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calorie Expenditure Predictor</title>
+    <style>
+        /* Reset and base */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            margin: 40px 20px;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a73e8;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+        }
+        form > div {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 1rem;
+            border: 1.8px solid #ccc;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 8px rgba(26,115,232,0.3);
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1a73e8;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #155ab6;
+        }
+        h2 {
+            margin-top: 25px;
+            padding: 12px;
+            background: #e6f0ff;
+            border: 1px solid #a3c0ff;
+            color: #1a44b8;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calorie Expenditure Predictor</h1>
+
+        <form action="{{ url_for('predict_datapoint') }}" method="post" id="predict-form">
+            <div>
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" placeholder="Enter your ID" required />
+            </div>
+
+            <div>
+                <label for="Sex">Sex</label>
+                <select id="Sex" name="Sex" required>
+                    <option value="" disabled selected>Select your Sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Age">Age</label>
+                <input type="number" id="Age" name="Age" placeholder="Enter Age" min="0" required />
+            </div>
+
+            <div>
+                <label for="Height">Height (cm)</label>
+                <input type="number" id="Height" name="Height" placeholder="Enter Height in cm" min="0" step="0.1" required />
+            </div>
+
+            <div>
+                <label for="Weight">Weight (kg)</label>
+                <input type="number" id="Weight" name="Weight" placeholder="Enter Weight in kg" min="0" step="0.1" required />
+            </div>
+
+            <div>
+                <label for="Duration">Duration (minutes)</label>
+                <input type="number" id="Duration" name="Duration" placeholder="Enter Duration" min="0" step="0.1" required />
+            </div>
+
+            <div>
+                <label for="Heart_Rate">Heart Rate (bpm)</label>
+                <input type="number" id="Heart_Rate" name="Heart_Rate" placeholder="Enter Heart Rate" min="0" step="1" required />
+            </div>
+
+            <div>
+                <label for="Body_Temp">Body Temperature (°F)</label>
+                <input type="number" id="Body_Temp" name="Body_Temp" placeholder="Enter Body Temperature" min="0" step="0.1" required />
+            </div>
+
+            <div>
+                <button type="submit">Predict Calories</button>
+            </div>
+        </form>
+
+        {% if results %}
+        <h2 id="result-display">Predicted Calories: {{ results }}</h2>
+        {% else %}
+        <h2 id="result-display" style="display:none;"></h2>
+        {% endif %}
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const resultDisplay = document.getElementById("result-display");
+            const idInput = document.getElementById("id");
+
+            // Clear prediction result when user types in ID
+            idInput.addEventListener("input", function () {
+                if (resultDisplay) {
+                    resultDisplay.textContent = "";
+                    resultDisplay.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

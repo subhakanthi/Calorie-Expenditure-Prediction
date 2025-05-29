@@ -1,0 +1,271 @@
+[2025-05-29 11:24:02] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.105:5000
+[2025-05-29 11:24:02] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-05-29 11:24:08] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:24:08] "GET / HTTP/1.1" 200 -
+[2025-05-29 11:24:15] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:24:15] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:25:34] 875 application - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/kanthi/Documents/calorie_expenditure/application.py", line 34, in predict_datapoint
+    predict_pipeline = PredictPipeline()
+TypeError: PredictPipeline.__init__() missing 1 required positional argument: 'test_path'
+[2025-05-29 11:25:34] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:25:34] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-05-29 11:36:14] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.105:5000
+[2025-05-29 11:36:14] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-05-29 11:36:19] 875 application - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 22, in predict
+    test_df['Sex'] = label_encoder.transform(test_df['Sex'])
+UnboundLocalError: local variable 'test_df' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/kanthi/Documents/calorie_expenditure/application.py", line 34, in predict_datapoint
+    results = predict_pipeline.predict(pred_df)
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 36, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py] line number [22] error message [local variable 'test_df' referenced before assignment]
+[2025-05-29 11:36:19] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:36:19] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-05-29 11:36:28] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:36:28] "GET / HTTP/1.1" 200 -
+[2025-05-29 11:36:29] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:36:29] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:36:33] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:36:33] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:36:36] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:36:36] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:36:45] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:36:45] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:36:46] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:36:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-05-29 11:37:22] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:37:22] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:37:23] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:37:23] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:37:57] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.105:5000
+[2025-05-29 11:37:57] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-05-29 11:38:03] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:38:03] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:38:26] 875 application - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 22, in predict
+    test_df['Sex'] = label_encoder.transform(test_df['Sex'])
+UnboundLocalError: local variable 'test_df' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/kanthi/Documents/calorie_expenditure/application.py", line 34, in predict_datapoint
+    results = predict_pipeline.predict(pred_df)
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 36, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py] line number [22] error message [local variable 'test_df' referenced before assignment]
+[2025-05-29 11:38:26] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:38:26] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-05-29 11:46:02] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.105:5000
+[2025-05-29 11:46:02] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-05-29 11:46:13] 875 application - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 21, in predict
+    data_scaled = preprocessor.transform(features)
+NameError: name 'preprocessor' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/kanthi/Documents/calorie_expenditure/application.py", line 34, in predict_datapoint
+    results = predict_pipeline.predict(pred_df)
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 28, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py] line number [21] error message [name 'preprocessor' is not defined]
+[2025-05-29 11:46:13] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:46:13] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-05-29 11:46:19] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:46:19] "GET / HTTP/1.1" 200 -
+[2025-05-29 11:46:21] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:46:21] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:46:50] 875 application - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 21, in predict
+    data_scaled = preprocessor.transform(features)
+NameError: name 'preprocessor' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/kanthi/Documents/calorie_expenditure/application.py", line 34, in predict_datapoint
+    results = predict_pipeline.predict(pred_df)
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 28, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py] line number [21] error message [name 'preprocessor' is not defined]
+[2025-05-29 11:46:50] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:46:50] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-05-29 11:56:43] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.105:5000
+[2025-05-29 11:56:43] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-05-29 11:56:48] 875 application - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 17, in predict
+    label_encoder = load_obj(self.label_encoder_path)  # load label encoder
+AttributeError: 'PredictPipeline' object has no attribute 'label_encoder_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/kanthi/Documents/calorie_expenditure/application.py", line 34, in predict_datapoint
+    results = predict_pipeline.predict(pred_df)
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 28, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py] line number [17] error message ['PredictPipeline' object has no attribute 'label_encoder_path']
+[2025-05-29 11:56:48] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:56:48] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-05-29 11:56:53] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:56:53] "GET / HTTP/1.1" 200 -
+[2025-05-29 11:56:55] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:56:55] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 11:57:18] 875 application - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 17, in predict
+    label_encoder = load_obj(self.label_encoder_path)  # load label encoder
+AttributeError: 'PredictPipeline' object has no attribute 'label_encoder_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kanthi/Documents/calorie_expenditure/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/kanthi/Documents/calorie_expenditure/application.py", line 34, in predict_datapoint
+    results = predict_pipeline.predict(pred_df)
+  File "/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py", line 28, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py] line number [17] error message ['PredictPipeline' object has no attribute 'label_encoder_path']
+[2025-05-29 11:57:18] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:57:18] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-05-29 11:59:40] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.105:5000
+[2025-05-29 11:59:40] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-05-29 11:59:40] 97 werkzeug - INFO -  * Restarting with stat
+[2025-05-29 11:59:42] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-05-29 11:59:42] 97 werkzeug - INFO -  * Debugger PIN: 410-823-111
+[2025-05-29 11:59:46] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:59:46] "GET / HTTP/1.1" 200 -
+[2025-05-29 11:59:49] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 11:59:49] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 12:00:10] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:00:10] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-05-29 12:00:11] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:00:11] "GET /predict?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2025-05-29 12:00:11] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:00:11] "[36mGET /predict?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2025-05-29 12:00:12] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:00:12] "GET /predict?__debugger__=yes&cmd=resource&f=console.png&s=LQm1Ai8UtIYCXTetnqHv HTTP/1.1" 200 -
+[2025-05-29 12:00:12] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:00:12] "[36mGET /predict?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2025-05-29 12:01:03] 97 werkzeug - INFO -  * Detected change in '/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py', reloading
+[2025-05-29 12:01:03] 97 werkzeug - INFO -  * Restarting with stat
+[2025-05-29 12:01:06] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-05-29 12:01:06] 97 werkzeug - INFO -  * Debugger PIN: 410-823-111
+[2025-05-29 12:01:20] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:01:20] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-05-29 12:01:20] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:01:20] "[36mGET /predict?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2025-05-29 12:01:20] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:01:20] "[36mGET /predict?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2025-05-29 12:01:20] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:01:20] "GET /predict?__debugger__=yes&cmd=resource&f=console.png&s=fitJubpgM2PUow6ivXUQ HTTP/1.1" 200 -
+[2025-05-29 12:01:20] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:01:20] "[36mGET /predict?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2025-05-29 12:02:42] 97 werkzeug - INFO -  * Detected change in '/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py', reloading
+[2025-05-29 12:02:42] 97 werkzeug - INFO -  * Restarting with stat
+[2025-05-29 12:02:44] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-05-29 12:02:44] 97 werkzeug - INFO -  * Debugger PIN: 410-823-111
+[2025-05-29 12:02:51] 97 werkzeug - INFO -  * Detected change in '/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py', reloading
+[2025-05-29 12:02:52] 97 werkzeug - INFO -  * Restarting with stat
+[2025-05-29 12:02:54] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-05-29 12:02:54] 97 werkzeug - INFO -  * Debugger PIN: 410-823-111
+[2025-05-29 12:02:55] 97 werkzeug - INFO -  * Detected change in '/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py', reloading
+[2025-05-29 12:02:55] 97 werkzeug - INFO -  * Restarting with stat
+[2025-05-29 12:02:57] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-05-29 12:02:57] 97 werkzeug - INFO -  * Debugger PIN: 410-823-111
+[2025-05-29 12:03:01] 97 werkzeug - INFO -  * Detected change in '/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py', reloading
+[2025-05-29 12:03:01] 97 werkzeug - INFO -  * Restarting with stat
+[2025-05-29 12:03:03] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-05-29 12:03:03] 97 werkzeug - INFO -  * Debugger PIN: 410-823-111
+[2025-05-29 12:03:05] 97 werkzeug - INFO -  * Detected change in '/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py', reloading
+[2025-05-29 12:03:05] 97 werkzeug - INFO -  * Restarting with stat
+[2025-05-29 12:03:07] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-05-29 12:03:07] 97 werkzeug - INFO -  * Debugger PIN: 410-823-111
+[2025-05-29 12:03:49] 97 werkzeug - INFO -  * Detected change in '/home/kanthi/Documents/calorie_expenditure/src/pipeline/predict_pipeline.py', reloading
+[2025-05-29 12:03:49] 97 werkzeug - INFO -  * Restarting with stat
+[2025-05-29 12:06:06] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.105:5000
+[2025-05-29 12:06:06] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-05-29 12:06:06] 97 werkzeug - INFO -  * Restarting with stat
+[2025-05-29 12:06:08] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-05-29 12:06:08] 97 werkzeug - INFO -  * Debugger PIN: 410-823-111
+[2025-05-29 12:06:12] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:06:12] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 12:06:49] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:06:49] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 12:07:25] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:07:25] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 12:13:51] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:13:51] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 12:14:30] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:14:30] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 12:14:49] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:14:49] "GET / HTTP/1.1" 200 -
+[2025-05-29 12:16:22] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:16:22] "GET / HTTP/1.1" 200 -
+[2025-05-29 12:17:35] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:17:35] "GET / HTTP/1.1" 200 -
+[2025-05-29 12:17:45] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:17:45] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 12:17:59] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:17:59] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 12:19:47] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:19:47] "GET / HTTP/1.1" 200 -
+[2025-05-29 12:21:53] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:21:53] "[35m[1mGET / HTTP/1.1[0m" 500 -
+[2025-05-29 12:21:53] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:21:53] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2025-05-29 12:21:53] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:21:53] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2025-05-29 12:21:53] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:21:53] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=k8i7kqhFd36rsnMUI8PO HTTP/1.1" 200 -
+[2025-05-29 12:21:53] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:21:53] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2025-05-29 12:23:29] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:23:29] "GET / HTTP/1.1" 200 -
+[2025-05-29 12:23:32] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:23:32] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 12:24:00] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:24:00] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 12:24:39] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:24:39] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 12:24:58] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:24:58] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 12:25:12] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:25:12] "GET / HTTP/1.1" 200 -
+[2025-05-29 12:25:35] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:25:35] "GET / HTTP/1.1" 200 -
+[2025-05-29 12:25:41] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:25:41] "GET /predict HTTP/1.1" 200 -
+[2025-05-29 12:25:57] 97 werkzeug - INFO - 127.0.0.1 - - [29/May/2025 12:25:57] "POST /predict HTTP/1.1" 200 -

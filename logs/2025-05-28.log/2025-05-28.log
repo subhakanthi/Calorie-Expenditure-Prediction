@@ -1,0 +1,65 @@
+[2025-05-28 12:27:04] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 12:36:47] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 12:37:34] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 12:37:36] 27 root - INFO - Enter the data ingestion method or component
+[2025-05-28 12:37:37] 31 root - INFO - Read the train and test data set
+[2025-05-28 12:37:44] 37 root - INFO - Train and Test data saved to Artifacts
+[2025-05-28 12:42:25] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 12:42:27] 27 root - INFO - Enter the data ingestion method or component
+[2025-05-28 12:42:28] 31 root - INFO - Read the train and test data set
+[2025-05-28 12:42:34] 37 root - INFO - Train and Test data saved to Artifacts
+[2025-05-28 12:42:35] 57 root - INFO - Read train and test data successfully
+[2025-05-28 12:42:35] 59 root - INFO - Obtaining preprocessor object
+[2025-05-28 12:42:35] 39 root - INFO - Numerical columns: ['writing_score', 'reading_score']
+[2025-05-28 12:42:35] 40 root - INFO - Categorical columns: ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
+[2025-05-28 12:51:22] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 12:51:24] 27 root - INFO - Enter the data ingestion method or component
+[2025-05-28 12:51:25] 31 root - INFO - Read the train and test data set
+[2025-05-28 12:51:31] 37 root - INFO - Train and Test data saved to Artifacts
+[2025-05-28 12:51:32] 57 root - INFO - Read train and test data successfully
+[2025-05-28 12:51:32] 59 root - INFO - Obtaining preprocessor object
+[2025-05-28 12:51:32] 39 root - INFO - Numerical columns: ['writing_score', 'reading_score']
+[2025-05-28 12:51:32] 40 root - INFO - Categorical columns: ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
+[2025-05-28 12:53:52] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 12:53:55] 27 root - INFO - Enter the data ingestion method or component
+[2025-05-28 12:53:56] 31 root - INFO - Read the train and test data set
+[2025-05-28 12:54:03] 37 root - INFO - Train and Test data saved to Artifacts
+[2025-05-28 12:54:04] 57 root - INFO - Read train and test data successfully
+[2025-05-28 12:54:04] 59 root - INFO - Obtaining preprocessor object
+[2025-05-28 12:54:04] 39 root - INFO - Numerical columns: ['writing_score', 'reading_score']
+[2025-05-28 12:54:04] 40 root - INFO - Categorical columns: ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
+[2025-05-28 12:56:44] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 12:56:57] 27 root - INFO - Enter the data ingestion method or component
+[2025-05-28 12:56:58] 31 root - INFO - Read the train and test data set
+[2025-05-28 12:57:08] 37 root - INFO - Train and Test data saved to Artifacts
+[2025-05-28 12:57:09] 57 root - INFO - Read train and test data successfully
+[2025-05-28 12:57:09] 59 root - INFO - Obtaining preprocessor object
+[2025-05-28 12:57:09] 39 root - INFO - Numerical columns: ['writing_score', 'reading_score']
+[2025-05-28 12:57:09] 40 root - INFO - Categorical columns: ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
+[2025-05-28 13:27:46] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 13:28:12] 27 root - INFO - Enter the data ingestion method or component
+[2025-05-28 13:34:40] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 13:34:43] 27 root - INFO - Enter the data ingestion method or component
+[2025-05-28 13:34:45] 31 root - INFO - Read the train and test data set
+[2025-05-28 13:34:51] 37 root - INFO - Train and Test data saved to Artifacts
+[2025-05-28 13:34:52] 57 root - INFO - Read train and test data successfully
+[2025-05-28 13:34:52] 59 root - INFO - Obtaining preprocessor object
+[2025-05-28 13:34:52] 39 root - INFO - Numerical columns: ['writing_score', 'reading_score']
+[2025-05-28 13:34:52] 40 root - INFO - Categorical columns: ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
+[2025-05-28 13:37:12] 160 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2025-05-28 13:37:14] 29 root - INFO - Enter the data ingestion method or component
+[2025-05-28 13:37:15] 33 root - INFO - Read the train and test data set
+[2025-05-28 13:37:23] 39 root - INFO - Train and Test data saved to Artifacts
+[2025-05-28 13:37:23] 57 root - INFO - Read train and test data successfully
+[2025-05-28 13:37:23] 59 root - INFO - Obtaining preprocessor object
+[2025-05-28 13:37:23] 39 root - INFO - Numerical columns: ['writing_score', 'reading_score']
+[2025-05-28 13:37:23] 40 root - INFO - Categorical columns: ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
+[2025-05-28 14:00:58] 27 root - INFO - Enter the data ingestion method or component
+[2025-05-28 14:00:59] 31 root - INFO - Read the train and test data set
+[2025-05-28 14:01:07] 37 root - INFO - Train and Test data saved to Artifacts
+[2025-05-28 14:01:07] 28 root - INFO - Read Train and Test data
+[2025-05-28 14:01:07] 30 root - INFO - Dropped missing values
+[2025-05-28 14:01:08] 47 root - INFO - Saved Label Encoder object successfully
+[2025-05-28 14:01:08] 54 root - INFO - Train data split into training and validation sets
+[2025-05-28 14:02:16] 26 root - INFO - Model training completed
+[2025-05-28 14:02:16] 42 root - INFO - Training Completed
