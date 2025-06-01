@@ -6,17 +6,17 @@ WORKDIR /app
 # Copy app code
 COPY . /app
 
-# Install OS-level dependencies
+# Install OS-level dependencies (excluding awscli)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    awscli ffmpeg libsm6 libxext6 unzip && \
+    ffmpeg libsm6 libxext6 unzip && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port (not strictly required by EB but good practice)
+# Expose port
 EXPOSE 5000
 
-# Set the command to run your app
+# Run the Flask application
 CMD ["python3", "application.py"]
