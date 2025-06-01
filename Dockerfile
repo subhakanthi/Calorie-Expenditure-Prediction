@@ -1,22 +1,8 @@
 FROM python:3.8-slim-buster
-
-# Set working directory
 WORKDIR /app
-
-# Copy app code
 COPY . /app
 
-# Install OS-level dependencies (excluding awscli)
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    ffmpeg libsm6 libxext6 unzip && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt update -y && apt install awscli -y
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Expose port
-EXPOSE 8080
-
-# Run the Flask application
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 unzip -y && pip install -r requirements.txt
 CMD ["python3", "application.py"]
